@@ -1,0 +1,25 @@
+{
+    "_id": ObjectId("unique_id"),
+    "First Name": "John",
+    "Last Name": "Doe",
+    "Middle Name": "",
+    "Origin":"",
+    "Current Place": "",
+    "birthdate": "1990-01-15",
+    "gender": "Male",
+    "spouse": [
+        ObjectId("spouse1_id"),
+        ObjectId("spouse2_id")
+    ],
+    "children": [
+      ObjectId("child1_id"),
+      ObjectId("child2_id")
+    ],
+    "parents": [
+      ObjectId("father1_id"),
+      ObjectId("father2_id"),
+      ObjectId("mother1_id"),
+      ObjectId("mother2_id")
+    ]
+  }
+  
