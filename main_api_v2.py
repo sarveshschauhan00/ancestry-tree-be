@@ -57,7 +57,7 @@ def get_spouse(person_id):
     return None
 
 
-def print_family_tree(person, level=0, tree={}):
+def print_family_tree(person, level=0, ls=[], mid='', fid=''):
     # Print a family tree for a person and their descendants
     indent = "    " * level
 
@@ -66,18 +66,35 @@ def print_family_tree(person, level=0, tree={}):
     if spouse:
         print(f"{indent} - {person['name']} || {spouse['name']}")
         # print(f"{indent} - {person['name']} ({person['_id']}) || Spouse: {spouse['name']} ({spouse['_id']})")
+        # { id: 3, mid: 1, fid: 2, name: "Peter Stevens", gender: "male", img: "https://cdn.balkan.app/shared/m10/2.jpg" },
+        if mid or fid:
+            ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
+        else:
+            ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "name": person["name"], "gender": person["gender"], "img": "" })
+        ls.append({ "id": str(spouse["_id"]), "pids":[str(person["_id"])], "name": spouse["name"], "gender": spouse["gender"], "img": "" })
     else:
         print(f"{indent} - {person['name']}")
         # print(f"{indent} - {person['name']} ({person['_id']})")
+        if mid or fid:
+            ls.append({ "id": str(person["_id"]), "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
+        else:
+            ls.append({ "id": str(person["_id"]), "name": person["name"], "gender": person["gender"], "img": "" })
 
-    children = get_children(person["_id"])
-    tree[person['name']] = {}
-    for child in children:
-        tree[person['name']][child['name']] = {}
-        print_family_tree(child, level + 1, tree[person['name']])
-    return tree
+    childrens = get_children(person["_id"])
+    
+    print("spouse: ", spouse)
+    print("childrens: ", childrens)
 
+    for child in childrens:
+        if person["gender"] == "male":
+            print_family_tree(child, level + 1, ls, str(person["_id"]), str(spouse["_id"]))
+        else:
+            print_family_tree(child, level + 1, ls, str(person["_id"]), str(spouse["_id"]))
 
+    return ls
+
+def getRelations():
+    pass
 
 # @app.route('/add', methods=['POST'])
 # def add_document():
@@ -88,40 +105,14 @@ def print_family_tree(person, level=0, tree={}):
 @app.route('/lookup', methods=['POST'])
 def lookup_document():
     data = request.json
-    # person = persons_collection.find_one({"_id": ObjectId(data['id'])})
-    # if person:
-    #     print("Family Tree:")
-    #     # d = print_family_tree(person)
-    #     return jsonify({})
-    # else:
-    #     return 'Person not found', 404
-    # Access the collection
-    # Find and print all documents in the collection
-    d = {
-        "relations":[],
-        "persons":[]
-    }
-    for document in relationships_collection.find():
-        # print(document)
-        # print("person1: ", document['person1_id'])
-        # print("person2: ", document.get('person2_id'))
-        # { id: 1, from: 1, to: 2, label: 'Spouse' }
-        # { id: 1, pids: [2], name: "Amber McKenzie", gender: "female", img: "https://cdn.balkan.app/shared/2.jpg"  }
-        d["relations"].append({ "id": str(document['_id']), "from": str(document['person1_id']), "to": str(document['person2_id']), "label": str(document['relationship_type']) })
-    for document in persons_collection.find():
-        # print(document)
-        # print("person1: ", document['person1_id'])
-        # print("person2: ", document.get('person2_id'))
-        # { id: 1, label: 'John' }
-        d["persons"].append({ "id": str(document['_id']), "label": str(document['name']) })
-    print("persons: ")
-    for p in d["persons"]:
-        print(p)
-    print("relations: ")
-    for r in d["relations"]:
-        print(r)
-
-    return jsonify(d)
+    person = persons_collection.find_one({"_id": ObjectId(data['id'])})
+    if person:
+        print("Family Tree:")
+        d = print_family_tree(person)
+        # print(d)
+        return jsonify(d)
+    else:
+        return 'Person not found', 404
 
 @app.route('/delete/<id>', methods=['DELETE'])
 def delete_document(id):

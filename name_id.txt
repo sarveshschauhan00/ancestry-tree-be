@@ -1,3 +1,4 @@
+Collection Name: persons
 {'_id': ObjectId('654661342dfbf3ee2f931373'), 'name': 'Kamla', 'gender': 'female'}
 {'_id': ObjectId('654661402dfbf3ee2f931374'), 'name': 'Bablu', 'gender': 'male'}
 {'_id': ObjectId('654661522dfbf3ee2f931375'), 'name': 'Lali', 'gender': 'female'}
@@ -18,6 +19,314 @@
 {'_id': ObjectId('65468c871faa9c9f97155866'), 'name': 'Mala', 'gender': 'female'}
 {'_id': ObjectId('65468c921faa9c9f97155867'), 'name': 'Rajendra', 'gender': 'male'}
 {'_id': ObjectId('65468c9c1faa9c9f97155868'), 'name': 'Ram Singh', 'gender': 'male'}
-{'_id': ObjectId('65468cb21faa9c9f97155869'), 'name': 'Sita Saran', 'gender': 'female'}
 {'_id': ObjectId('65468d061faa9c9f9715586b'), 'name': 'Sitasaran', 'gender': 'male'}
 {'_id': ObjectId('65468d0f1faa9c9f9715586c'), 'name': 'Surajkali', 'gender': 'female'}
+{'_id': ObjectId('6546903504b3536e2d7f3824'), 'name': 'Nirmala', 'gender': 'female'}
+{'_id': ObjectId('6546904204b3536e2d7f3825'), 'name': 'Ramesh', 'gender': 'male'}
+{'_id': ObjectId('6546905604b3536e2d7f3826'), 'name': 'Ram Parihar', 'gender': 'male'}
+{'_id': ObjectId('6546906304b3536e2d7f3827'), 'name': 'Narendra', 'gender': 'male'}
+{'_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'name': 'Mayur', 'gender': 'male'}
+{'_id': ObjectId('65470ab2173cb00f84c4e0f1'), 'name': 'Mayank', 'gender': 'male'}
+{'_id': ObjectId('65470aca173cb00f84c4e0f2'), 'name': 'Akshya', 'gender': 'female'}
+{'_id': ObjectId('65470b28c5c1b96bfe78b7a4'), 'name': 'Ruchi', 'gender': 'female'}
+{'_id': ObjectId('65470b9bc5c1b96bfe78b7a9'), 'name': 'Shikha', 'gender': 'female'}
+{'_id': ObjectId('654f87cd7f992a0736698df3'), 'name': 'Rammilan', 'gender': 'male'}
+
+{'_id': ObjectId('654665aca29cc3ef227ca195'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('654661402dfbf3ee2f931374'), 'relationship_type': 'child'}
+{'_id': ObjectId('654665aca29cc3ef227ca196'), 'person1_id': ObjectId('654661402dfbf3ee2f931374'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654665c1a29cc3ef227ca197'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('654661522dfbf3ee2f931375'), 'relationship_type': 'child'}
+{'_id': ObjectId('654665c1a29cc3ef227ca198'), 'person1_id': ObjectId('654661522dfbf3ee2f931375'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654665efa29cc3ef227ca199'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('6546615b2dfbf3ee2f931376'), 'relationship_type': 'child'}
+{'_id': ObjectId('654665efa29cc3ef227ca19a'), 'person1_id': ObjectId('6546615b2dfbf3ee2f931376'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65466643a29cc3ef227ca19c'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('65466609a29cc3ef227ca19b'), 'relationship_type': 'child'}
+{'_id': ObjectId('65466643a29cc3ef227ca19d'), 'person1_id': ObjectId('65466609a29cc3ef227ca19b'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'parent'}
+{'_id': ObjectId('6546666ba29cc3ef227ca19e'), 'person1_id': ObjectId('654661402dfbf3ee2f931374'), 'person2_id': ObjectId('654662472dfbf3ee2f93137c'), 'relationship_type': 'child'}
+{'_id': ObjectId('6546666ba29cc3ef227ca19f'), 'person1_id': ObjectId('654662472dfbf3ee2f93137c'), 'person2_id': ObjectId('654661402dfbf3ee2f931374'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65466686a29cc3ef227ca1a0'), 'person1_id': ObjectId('654661402dfbf3ee2f931374'), 'person2_id': ObjectId('6546624f2dfbf3ee2f93137d'), 'relationship_type': 'child'}
+{'_id': ObjectId('65466686a29cc3ef227ca1a1'), 'person1_id': ObjectId('6546624f2dfbf3ee2f93137d'), 'person2_id': ObjectId('654661402dfbf3ee2f931374'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654666a0a29cc3ef227ca1a2'), 'person1_id': ObjectId('654661522dfbf3ee2f931375'), 'person2_id': ObjectId('654662b12dfbf3ee2f931380'), 'relationship_type': 'child'}
+{'_id': ObjectId('654666a0a29cc3ef227ca1a3'), 'person1_id': ObjectId('654662b12dfbf3ee2f931380'), 'person2_id': ObjectId('654661522dfbf3ee2f931375'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654666b5a29cc3ef227ca1a4'), 'person1_id': ObjectId('654661522dfbf3ee2f931375'), 'person2_id': ObjectId('654662c82dfbf3ee2f931382'), 'relationship_type': 'child'}
+{'_id': ObjectId('654666b5a29cc3ef227ca1a5'), 'person1_id': ObjectId('654662c82dfbf3ee2f931382'), 'person2_id': ObjectId('654661522dfbf3ee2f931375'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654666fba29cc3ef227ca1a6'), 'person1_id': ObjectId('65466609a29cc3ef227ca19b'), 'person2_id': ObjectId('6546628b2dfbf3ee2f93137e'), 'relationship_type': 'child'}
+{'_id': ObjectId('654666fba29cc3ef227ca1a7'), 'person1_id': ObjectId('6546628b2dfbf3ee2f93137e'), 'person2_id': ObjectId('65466609a29cc3ef227ca19b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65466710a29cc3ef227ca1a8'), 'person1_id': ObjectId('65466609a29cc3ef227ca19b'), 'person2_id': ObjectId('654662962dfbf3ee2f93137f'), 'relationship_type': 'child'}
+{'_id': ObjectId('65466710a29cc3ef227ca1a9'), 'person1_id': ObjectId('654662962dfbf3ee2f93137f'), 'person2_id': ObjectId('65466609a29cc3ef227ca19b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65466738a29cc3ef227ca1aa'), 'person1_id': ObjectId('6546615b2dfbf3ee2f931376'), 'person2_id': ObjectId('654661bb2dfbf3ee2f931377'), 'relationship_type': 'husband'}
+{'_id': ObjectId('65466738a29cc3ef227ca1ab'), 'person1_id': ObjectId('654661bb2dfbf3ee2f931377'), 'person2_id': ObjectId('6546615b2dfbf3ee2f931376'), 'relationship_type': 'wife'}
+{'_id': ObjectId('6546676da29cc3ef227ca1ac'), 'person1_id': ObjectId('6546615b2dfbf3ee2f931376'), 'person2_id': ObjectId('654661c32dfbf3ee2f931378'), 'relationship_type': 'child'}
+{'_id': ObjectId('6546676da29cc3ef227ca1ad'), 'person1_id': ObjectId('654661c32dfbf3ee2f931378'), 'person2_id': ObjectId('6546615b2dfbf3ee2f931376'), 'relationship_type': 'parent'}
+{'_id': ObjectId('6546678fa29cc3ef227ca1ae'), 'person1_id': ObjectId('6546615b2dfbf3ee2f931376'), 'person2_id': ObjectId('654661cc2dfbf3ee2f931379'), 'relationship_type': 'child'}
+{'_id': ObjectId('6546678fa29cc3ef227ca1af'), 'person1_id': ObjectId('654661cc2dfbf3ee2f931379'), 'person2_id': ObjectId('6546615b2dfbf3ee2f931376'), 'relationship_type': 'parent'}
+{'_id': ObjectId('654667a2a29cc3ef227ca1b0'), 'person1_id': ObjectId('6546615b2dfbf3ee2f931376'), 'person2_id': ObjectId('654661de2dfbf3ee2f93137a'), 'relationship_type': 'child'}
+{'_id': ObjectId('654667a2a29cc3ef227ca1b1'), 'person1_id': ObjectId('654661de2dfbf3ee2f93137a'), 'person2_id': ObjectId('6546615b2dfbf3ee2f931376'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468d68c10bbff7dece5302'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468d0f1faa9c9f9715586c'), 'relationship_type': 'wife'}
+{'_id': ObjectId('65468d68c10bbff7dece5303'), 'person1_id': ObjectId('65468d0f1faa9c9f9715586c'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'husband'}
+{'_id': ObjectId('65468d9cc10bbff7dece5304'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468c9c1faa9c9f97155868'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468d9cc10bbff7dece5305'), 'person1_id': ObjectId('65468c9c1faa9c9f97155868'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468db8c10bbff7dece5306'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468c921faa9c9f97155867'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468db8c10bbff7dece5307'), 'person1_id': ObjectId('65468c921faa9c9f97155867'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468e0f04b3536e2d7f381c'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468c871faa9c9f97155866'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468e0f04b3536e2d7f381d'), 'person1_id': ObjectId('65468c871faa9c9f97155866'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468e2304b3536e2d7f381e'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468c7b1faa9c9f97155865'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468e2304b3536e2d7f381f'), 'person1_id': ObjectId('65468c7b1faa9c9f97155865'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468e3804b3536e2d7f3820'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('65468c6a1faa9c9f97155864'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468e3804b3536e2d7f3821'), 'person1_id': ObjectId('65468c6a1faa9c9f97155864'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65468e6d04b3536e2d7f3822'), 'person1_id': ObjectId('65468d061faa9c9f9715586b'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'child'}
+{'_id': ObjectId('65468e6d04b3536e2d7f3823'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('65468d061faa9c9f9715586b'), 'relationship_type': 'parent'}
+{'_id': ObjectId('6546907f04b3536e2d7f3828'), 'person1_id': ObjectId('65468c6a1faa9c9f97155864'), 'person2_id': ObjectId('6546903504b3536e2d7f3824'), 'relationship_type': 'wife'}
+{'_id': ObjectId('6546907f04b3536e2d7f3829'), 'person1_id': ObjectId('6546903504b3536e2d7f3824'), 'person2_id': ObjectId('65468c6a1faa9c9f97155864'), 'relationship_type': 'husband'}
+{'_id': ObjectId('6546909f04b3536e2d7f382a'), 'person1_id': ObjectId('654661342dfbf3ee2f931373'), 'person2_id': ObjectId('6546904204b3536e2d7f3825'), 'relationship_type': 'husband'}
+{'_id': ObjectId('6546909f04b3536e2d7f382b'), 'person1_id': ObjectId('6546904204b3536e2d7f3825'), 'person2_id': ObjectId('654661342dfbf3ee2f931373'), 'relationship_type': 'wife'}
+{'_id': ObjectId('654690bd04b3536e2d7f382c'), 'person1_id': ObjectId('65468c7b1faa9c9f97155865'), 'person2_id': ObjectId('6546905604b3536e2d7f3826'), 'relationship_type': 'husband'}
+{'_id': ObjectId('654690bd04b3536e2d7f382d'), 'person1_id': ObjectId('6546905604b3536e2d7f3826'), 'person2_id': ObjectId('65468c7b1faa9c9f97155865'), 'relationship_type': 'wife'}
+{'_id': ObjectId('654690d404b3536e2d7f382e'), 'person1_id': ObjectId('65468c871faa9c9f97155866'), 'person2_id': ObjectId('6546906304b3536e2d7f3827'), 'relationship_type': 'husband'}
+{'_id': ObjectId('654690d404b3536e2d7f382f'), 'person1_id': ObjectId('6546906304b3536e2d7f3827'), 'person2_id': ObjectId('65468c871faa9c9f97155866'), 'relationship_type': 'wife'}
+{'_id': ObjectId('65470ae5173cb00f84c4e0f3'), 'person1_id': ObjectId('65468c6a1faa9c9f97155864'), 'person2_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'relationship_type': 'child'}
+{'_id': ObjectId('65470ae5173cb00f84c4e0f4'), 'person1_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'person2_id': ObjectId('65468c6a1faa9c9f97155864'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65470afa173cb00f84c4e0f5'), 'person1_id': ObjectId('65468c6a1faa9c9f97155864'), 'person2_id': ObjectId('65470ab2173cb00f84c4e0f1'), 'relationship_type': 'child'}
+{'_id': ObjectId('65470afa173cb00f84c4e0f6'), 'person1_id': ObjectId('65470ab2173cb00f84c4e0f1'), 'person2_id': ObjectId('65468c6a1faa9c9f97155864'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65470b42c5c1b96bfe78b7a5'), 'person1_id': ObjectId('65470b28c5c1b96bfe78b7a4'), 'person2_id': ObjectId('65468c6a1faa9c9f97155864'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65470b42c5c1b96bfe78b7a6'), 'person1_id': ObjectId('65468c6a1faa9c9f97155864'), 'person2_id': ObjectId('65470b28c5c1b96bfe78b7a4'), 'relationship_type': 'child'}
+{'_id': ObjectId('65470b6cc5c1b96bfe78b7a7'), 'person1_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'person2_id': ObjectId('65470aca173cb00f84c4e0f2'), 'relationship_type': 'child'}
+{'_id': ObjectId('65470b6cc5c1b96bfe78b7a8'), 'person1_id': ObjectId('65470aca173cb00f84c4e0f2'), 'person2_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'relationship_type': 'parent'}
+{'_id': ObjectId('65470bc0c5c1b96bfe78b7aa'), 'person1_id': ObjectId('65470b9bc5c1b96bfe78b7a9'), 'person2_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'relationship_type': 'husband'}
+{'_id': ObjectId('65470bc0c5c1b96bfe78b7ab'), 'person1_id': ObjectId('65470aa7173cb00f84c4e0f0'), 'person2_id': ObjectId('65470b9bc5c1b96bfe78b7a9'), 'relationship_type': 'wife'}
+
+
+
+
+
+[
+{
+    "gender": "female",
+    "id": "654661342dfbf3ee2f931373",
+    "name": "Kamla",
+    "pids": [
+        "6546904204b3536e2d7f3825"
+    ]
+},
+{
+    "fid": "6546904204b3536e2d7f3825",
+    "gender": "male",
+    "id": "654661402dfbf3ee2f931374",
+    "mid": "654661342dfbf3ee2f931373",
+    "name": "Bablu"
+},
+{
+    "fid": "6546904204b3536e2d7f3825",
+    "gender": "female",
+    "id": "654661522dfbf3ee2f931375",
+    "mid": "654661342dfbf3ee2f931373",
+    "name": "Lali"
+},
+{
+    "fid": "6546904204b3536e2d7f3825",
+    "gender": "female",
+    "id": "6546615b2dfbf3ee2f931376",
+    "mid": "654661342dfbf3ee2f931373",
+    "name": "Anju"
+},
+{
+    "fid": "6546904204b3536e2d7f3825",
+    "gender": "female",
+    "id": "65466609a29cc3ef227ca19b",
+    "mid": "654661342dfbf3ee2f931373",
+    "name": "Lata"
+},
+{
+    "gender": "female",
+    "id": "6546615b2dfbf3ee2f931376",
+    "name": "Anju",
+    "pids": [
+        "654661bb2dfbf3ee2f931377"
+    ]
+},
+{
+    "fid": "654661bb2dfbf3ee2f931377",
+    "gender": "female",
+    "id": "654661c32dfbf3ee2f931378",
+    "mid": "6546615b2dfbf3ee2f931376",
+    "name": "Ritambhara"
+},
+{
+    "fid": "654661bb2dfbf3ee2f931377",
+    "gender": "female",
+    "id": "654661cc2dfbf3ee2f931379",
+    "mid": "6546615b2dfbf3ee2f931376",
+    "name": "Rishika"
+},
+{
+    "fid": "654661bb2dfbf3ee2f931377",
+    "gender": "male",
+    "id": "654661de2dfbf3ee2f93137a",
+    "mid": "6546615b2dfbf3ee2f931376",
+    "name": "Sarvesh"
+},
+{
+    "gender": "male",
+    "id": "654661bb2dfbf3ee2f931377",
+    "name": "Jaswant",
+    "pids": [
+        "6546615b2dfbf3ee2f931376"
+    ]
+},
+{
+    "gender": "male",
+    "id": "65468c6a1faa9c9f97155864",
+    "name": "Jai Singh",
+    "pids": [
+        "6546903504b3536e2d7f3824"
+    ]
+},
+{
+    "fid": "65468c6a1faa9c9f97155864",
+    "gender": "male",
+    "id": "65470aa7173cb00f84c4e0f0",
+    "mid": "6546903504b3536e2d7f3824",
+    "name": "Mayur"
+},
+{
+    "fid": "65468c6a1faa9c9f97155864",
+    "gender": "male",
+    "id": "65470ab2173cb00f84c4e0f1",
+    "mid": "6546903504b3536e2d7f3824",
+    "name": "Mayank"
+},
+{
+    "fid": "65468c6a1faa9c9f97155864",
+    "gender": "female",
+    "id": "65470b28c5c1b96bfe78b7a4",
+    "mid": "6546903504b3536e2d7f3824",
+    "name": "Ruchi"
+},
+{
+    "gender": "female",
+    "id": "65468c7b1faa9c9f97155865",
+    "name": "Chanchal",
+    "pids": [
+        "6546905604b3536e2d7f3826"
+    ]
+},
+{
+    "gender": "female",
+    "id": "65468c871faa9c9f97155866",
+    "name": "Mala",
+    "pids": [
+        "6546906304b3536e2d7f3827"
+    ]
+},
+{
+    "gender": "male",
+    "id": "65468d061faa9c9f9715586b",
+    "name": "Sitasaran",
+    "pids": [
+        "65468d0f1faa9c9f9715586c"
+    ]
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "male",
+    "id": "65468c9c1faa9c9f97155868",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Ram Singh"
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "male",
+    "id": "65468c921faa9c9f97155867",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Rajendra"
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "female",
+    "id": "65468c871faa9c9f97155866",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Mala"
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "female",
+    "id": "65468c7b1faa9c9f97155865",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Chanchal"
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "male",
+    "id": "65468c6a1faa9c9f97155864",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Jai Singh"
+},
+{
+    "fid": "65468d061faa9c9f9715586b",
+    "gender": "female",
+    "id": "654661342dfbf3ee2f931373",
+    "mid": "65468d0f1faa9c9f9715586c",
+    "name": "Kamla"
+},
+{
+    "gender": "female",
+    "id": "65468d0f1faa9c9f9715586c",
+    "name": "Surajkali",
+    "pids": [
+        "65468d061faa9c9f9715586b"
+    ]
+},
+{
+    "gender": "female",
+    "id": "6546903504b3536e2d7f3824",
+    "name": "Nirmala",
+    "pids": [
+        "65468c6a1faa9c9f97155864"
+    ]
+},
+{
+    "gender": "male",
+    "id": "6546904204b3536e2d7f3825",
+    "name": "Ramesh",
+    "pids": [
+        "654661342dfbf3ee2f931373"
+    ]
+},
+{
+    "gender": "male",
+    "id": "6546905604b3536e2d7f3826",
+    "name": "Ram Parihar",
+    "pids": [
+        "65468c7b1faa9c9f97155865"
+    ]
+},
+{
+    "gender": "male",
+    "id": "6546906304b3536e2d7f3827",
+    "name": "Narendra",
+    "pids": [
+        "65468c871faa9c9f97155866"
+    ]
+},
+{
+    "gender": "male",
+    "id": "65470aa7173cb00f84c4e0f0",
+    "name": "Mayur",
+    "pids": [
+        "65470b9bc5c1b96bfe78b7a9"
+    ]
+},
+{
+    "fid": "65470aa7173cb00f84c4e0f0",
+    "gender": "female",
+    "id": "65470aca173cb00f84c4e0f2",
+    "mid": "65470b9bc5c1b96bfe78b7a9",
+    "name": "Akshya"
+},
+{
+    "gender": "female",
+    "id": "65470b9bc5c1b96bfe78b7a9",
+    "name": "Shikha",
+    "pids": [
+        "65470aa7173cb00f84c4e0f0"
+    ]
+}
+]

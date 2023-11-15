@@ -71,13 +71,64 @@ def print_family_tree(person, level=0, tree={}):
         # print(f"{indent} - {person['name']} ({person['_id']})")
 
     children = get_children(person["_id"])
-    tree[person['name']] = {}
+    # tree[person['name']] = {
+    #     "spouse": [],
+    #     "personId" : str(person["_id"])
+    # }
+    tree[person['name']] = {
+        "name": person['name'],
+        "class": person['gender'],
+        "spouse": [],
+        "marriages": [],
+        # "personId" : str(person["_id"])
+    }
+    # k = tree[person['name']]
+    # print(k)
+    if spouse:
+        tree[person['name']]["spouse"].append({
+            "name" : spouse['name'],
+            "class": spouse['gender'],
+            # "personId" : str(spouse['_id']),
+            "children" : [],
+        })
     for child in children:
-        tree[person['name']][child['name']] = {}
         print_family_tree(child, level + 1, tree[person['name']])
+        if spouse:
+            tree[person['name']]["spouse"][-1]["children"].append({child['name'] : tree[person['name']][child['name']]})
+            del tree[person['name']][child['name']]
+    tree[person['name']]["marriages"] = tree[person['name']]["spouse"]
+    del tree[person['name']]["spouse"]
+
+    # for child in children:
+    #     tree[person['name']]["children"].append({child['name'] : tree[person['name']][child['name']]})
+    # print(k)
     return tree
 
+def formatRelations(d, ls=[]):
+    for item in d:
+        a = {}
+        if "name" in d[item]:
+            a["name"] = d[item]["name"]
+        if "class" in d[item]:
+            a["class"] = d[item]["class"]
+        if "marriages" in d[item]:
+            a["marriages"] = []
+            for marriage in d[item]["marriages"]:
+                a["marriages"].append({
+                    "children": marriage["children"],
+                    "spouse": {
+                        "name": marriage["name"],
+                        "class": marriage["class"],
+                    }
+                })
 
+        ls.append(a)
+        for marriage in d[item]["marriages"]:
+            if "children" in marriage:
+                for child in marriage["children"]:
+                    formatRelations(child, d[item]["marriages"])
+    return ls
+    pass
 
 # @app.route('/add', methods=['POST'])
 # def add_document():
@@ -88,40 +139,15 @@ def print_family_tree(person, level=0, tree={}):
 @app.route('/lookup', methods=['POST'])
 def lookup_document():
     data = request.json
-    # person = persons_collection.find_one({"_id": ObjectId(data['id'])})
-    # if person:
-    #     print("Family Tree:")
-    #     # d = print_family_tree(person)
-    #     return jsonify({})
-    # else:
-    #     return 'Person not found', 404
-    # Access the collection
-    # Find and print all documents in the collection
-    d = {
-        "relations":[],
-        "persons":[]
-    }
-    for document in relationships_collection.find():
-        # print(document)
-        # print("person1: ", document['person1_id'])
-        # print("person2: ", document.get('person2_id'))
-        # { id: 1, from: 1, to: 2, label: 'Spouse' }
-        # { id: 1, pids: [2], name: "Amber McKenzie", gender: "female", img: "https://cdn.balkan.app/shared/2.jpg"  }
-        d["relations"].append({ "id": str(document['_id']), "from": str(document['person1_id']), "to": str(document['person2_id']), "label": str(document['relationship_type']) })
-    for document in persons_collection.find():
-        # print(document)
-        # print("person1: ", document['person1_id'])
-        # print("person2: ", document.get('person2_id'))
-        # { id: 1, label: 'John' }
-        d["persons"].append({ "id": str(document['_id']), "label": str(document['name']) })
-    print("persons: ")
-    for p in d["persons"]:
-        print(p)
-    print("relations: ")
-    for r in d["relations"]:
-        print(r)
-
-    return jsonify(d)
+    person = persons_collection.find_one({"_id": ObjectId(data['id'])})
+    if person:
+        print("Family Tree:")
+        d = print_family_tree(person)
+        ls = formatRelations(d)
+        # print(ls)
+        return jsonify(ls)
+    else:
+        return 'Person not found', 404
 
 @app.route('/delete/<id>', methods=['DELETE'])
 def delete_document(id):
@@ -141,7 +167,7 @@ def update_document(id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=4444)
 
 
 
