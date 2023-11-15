@@ -68,22 +68,27 @@ def print_family_tree(person, level=0, ls=[], mid='', fid=''):
         # print(f"{indent} - {person['name']} ({person['_id']}) || Spouse: {spouse['name']} ({spouse['_id']})")
         # { id: 3, mid: 1, fid: 2, name: "Peter Stevens", gender: "male", img: "https://cdn.balkan.app/shared/m10/2.jpg" },
         if mid or fid:
-            ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
+            if { "id": str(person["_id"]), "pids":[str(spouse["_id"])], "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" } not in ls: 
+                ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
         else:
-            ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "name": person["name"], "gender": person["gender"], "img": "" })
-        ls.append({ "id": str(spouse["_id"]), "pids":[str(person["_id"])], "name": spouse["name"], "gender": spouse["gender"], "img": "" })
+            if { "id": str(person["_id"]), "pids":[str(spouse["_id"])], "name": person["name"], "gender": person["gender"], "img": "" } not in ls: 
+                ls.append({ "id": str(person["_id"]), "pids":[str(spouse["_id"])], "name": person["name"], "gender": person["gender"], "img": "" })
+        if { "id": str(spouse["_id"]), "pids":[str(person["_id"])], "name": spouse["name"], "gender": spouse["gender"], "img": "" } not in ls: 
+            ls.append({ "id": str(spouse["_id"]), "pids":[str(person["_id"])], "name": spouse["name"], "gender": spouse["gender"], "img": "" })
     else:
         print(f"{indent} - {person['name']}")
         # print(f"{indent} - {person['name']} ({person['_id']})")
         if mid or fid:
-            ls.append({ "id": str(person["_id"]), "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
+            if { "id": str(person["_id"]), "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" } not in ls: 
+                ls.append({ "id": str(person["_id"]), "mid": mid, "fid": fid, "name": person["name"], "gender": person["gender"], "img": "" })
         else:
-            ls.append({ "id": str(person["_id"]), "name": person["name"], "gender": person["gender"], "img": "" })
+            if { "id": str(person["_id"]), "name": person["name"], "gender": person["gender"], "img": "" } not in ls: 
+                ls.append({ "id": str(person["_id"]), "name": person["name"], "gender": person["gender"], "img": "" })
 
     childrens = get_children(person["_id"])
     
-    print("spouse: ", spouse)
-    print("childrens: ", childrens)
+    # print("spouse: ", spouse)
+    # print("childrens: ", childrens)
 
     for child in childrens:
         if person["gender"] == "male":
